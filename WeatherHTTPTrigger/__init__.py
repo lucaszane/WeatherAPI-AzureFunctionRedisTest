@@ -8,9 +8,9 @@ import redis
 
 
 r = redis.Redis(
-    host=os.getenv("redis-server"),
-    port=os.getenv("redis-port"), 
-    password=os.getenv("redis-password"))
+    host=os.getenv("redis_server"),
+    port=os.getenv("redis_port"), 
+    password=os.getenv("redis_password"))
 
 def get_weather(location):
     url = "https://api.m3o.com/v1/weather/Now"
@@ -19,7 +19,7 @@ def get_weather(location):
     "location": location
     })
     headers = {
-    'Authorization': 'Bearer ' + os.getenv("weather-token"),
+    'Authorization': 'Bearer ' + os.getenv("weather_token"),
     'Content-Type': 'application/json'
     }
 
