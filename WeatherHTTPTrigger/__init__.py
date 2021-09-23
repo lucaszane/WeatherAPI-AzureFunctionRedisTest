@@ -29,7 +29,7 @@ def get_weather(location):
     return response.text
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    return func.HttpResponse(os.getenv("redis_server"),status_code=200)
+    return func.HttpResponse("Teste :" + os.getenv("redis_server"),status_code=200)
 
     name = req.params.get('name')
     if not name:
